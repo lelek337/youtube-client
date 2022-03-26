@@ -9,6 +9,10 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { SearchItemComponent } from './search-item/search-item.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavebarComponent } from './navebar/navebar.component';
+import { CardComponent } from './card/card.component';
+import { CreateCardComponent } from './card/create-card/create-card.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './registration/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { NavebarComponent } from './navebar/navebar.component';
     SearchResultsComponent,
     SearchItemComponent,
     ProfileComponent,
-    NavebarComponent
+    NavebarComponent,
+    CardComponent,
+    CreateCardComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
