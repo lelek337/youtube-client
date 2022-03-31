@@ -1,0 +1,12 @@
+@import '../variablesSCSS.scss';
+
+.search-input{
+  width: 15vw;
+  height: 3vw;
+}
+.search-button {
+  width: 7vw;
+  height: 3vw;
+  border-radius: 5%;
+  background-color: $logoColor;
+}
