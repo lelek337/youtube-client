@@ -1,0 +1,48 @@
+import { LocalizedString } from "@angular/compiler";
+
+export interface Item {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: Snippet;
+  statistics: Statistics;
+}
+
+interface Snippet {
+  publishedAt: string;
+  channelId: string;
+  title: string;
+  description: string;
+  thumbnails: Thumbnails;
+  channelTitle: string;
+  liveBroadcastContent: string;
+  localized: LocalizedString;
+  defaultAudioLanguage: string;
+}
+
+interface Thumbnails {
+  default: Thumbnails_Items;
+  medium: Thumbnails_Items;
+  high: Thumbnails_Items;
+  standard: Thumbnails_Items;
+  maxres: Thumbnails_Items;
+}
+
+interface Thumbnails_Items {
+  url: string;
+  width: number;
+  height: number;
+}
+
+interface Localized {
+  title: string;
+  description: string;
+}
+
+interface Statistics {
+  viewCount: string;
+  likeCount: string;
+  dislikeCount: string;
+  favoriteCount: string;
+  commentCount: string;
+}
