@@ -1,4 +1,4 @@
-import{ Item } from '../search/search-item.model'
+import{ Item } from './search-item.model'
 
 export interface Response {
   kind: string;

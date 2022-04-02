@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './search/search.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
-import { SearchItemComponent } from './search/search-item/search-item.component';
-import { ProfileComponent } from './profile/profile.component';
-import { NavebarComponent } from './navebar/navebar.component';
-import { CardComponent } from './card/card.component';
-import { CreateCardComponent } from './card/create-card/create-card.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './registration/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchResultsComponent } from './components/search/search-results/search-results.component';
+import { SearchItemComponent } from './components/search/search-item/search-item.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NavebarComponent } from './components/navebar/navebar.component';
+import { CardComponent } from './components/main/card/card.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/registration/login/login.component';
+import { SortingComponent } from './components/header/sorting/sorting.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { LoginComponent } from './registration/login/login.component';
     ProfileComponent,
     NavebarComponent,
     CardComponent,
-    CreateCardComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    SortingComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

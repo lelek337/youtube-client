@@ -1,0 +1,17 @@
+@import '../../../variablesSCSS.scss';
+
+.sorting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  a {
+    padding-left: .5vw;
+  }
+  input {
+    margin-left: .5vw;
+  }
+  p {
+    color: $sortingColor;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../variablesSCSS.scss';
+
+.wrapper-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-header {
+  width: 5vw;
+  height: 4vw;
+  border: none;
+  img {
+    width: 100%;
+  }
+}
+
+.setting {
+  margin-left: .5vw;
+  margin-top: .3vw;
+  width: 4vw;
+  height: 3.5vw;
+  background-color: $logoColor;
+  border: none;
+  border-radius: 15%;
+  img {
+    width: 2vw;
+  }
+}
+
+.user-name {
+  padding-left: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
