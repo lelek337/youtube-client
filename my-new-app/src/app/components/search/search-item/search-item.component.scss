@@ -1,0 +1,29 @@
+@import '../../../variablesSCSS.scss';
+
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  img {
+    width: 90%;
+  }
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 1vw;
+    padding-left: .5vw;
+  }
+}
+
+.button-like {
+  background-color: $logoColor;
+  border: none;
+  border-radius: .5vw;
+}

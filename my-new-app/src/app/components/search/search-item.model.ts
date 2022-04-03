@@ -15,8 +15,10 @@ interface Snippet {
   description: string;
   thumbnails: Thumbnails;
   channelTitle: string;
+  tags: string[];
+  categoryId: string;
   liveBroadcastContent: string;
-  localized: LocalizedString;
+  localized: Localized;
   defaultAudioLanguage: string;
 }
 

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+    cards = [8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21];
   constructor() { }
 
   ngOnInit(): void {
