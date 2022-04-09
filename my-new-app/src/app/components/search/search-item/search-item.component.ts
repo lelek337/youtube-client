@@ -8,7 +8,9 @@ import { Item } from '../search-item.model'
 })
 export class SearchItemComponent implements OnInit {
 
-  @Input() dataItem: Item;
+  @Input() item!: Item ;
+
+  unloadContent = false;
 
   constructor() { }
 

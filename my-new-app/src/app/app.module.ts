@@ -14,6 +14,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/registration/login/login.component';
 import { SortingComponent } from './components/header/sorting/sorting.component';
 import { MainComponent } from './components/main/main.component';
+import { BackgroundDirective } from './directives/background.directive.ts.directive';
+import { ShareService } from './services/share-service.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,17 @@ import { MainComponent } from './components/main/main.component';
     RegistrationComponent,
     LoginComponent,
     SortingComponent,
-    MainComponent
+    MainComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
-  providers: [],
+  providers: [
+    ShareService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

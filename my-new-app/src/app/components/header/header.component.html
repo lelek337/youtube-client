@@ -4,7 +4,7 @@
       <img src="../../assets/svg/logo.svg" alt="logo" />
     </button>
     <app-search></app-search>
-    <button class="setting">
+    <button (click)="unloadSorting = !unloadSorting" class="setting">
       <img src="../../assets/svg/Vector.svg" alt="Vector" />
     </button>
     <div class="user-name">
@@ -12,5 +12,6 @@
       <img src="../../assets/svg/login.svg" alt="login" />
     </div>
   </div>
-  <app-sorting></app-sorting>
+
+  <app-sorting *ngIf="unloadSorting"></app-sorting>
 </div>

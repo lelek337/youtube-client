@@ -1,5 +1,5 @@
 <div class="wrapper-card">
-  <img src="{{ data.snippet.thumbnails.medium.url }}" alt="caption" />
+  <img src="{{ item.snippet.thumbnails.medium.url }}" alt="caption" />
   <div class="likes">
     <img src="../../assets/svg/viewed.svg" alt="viewed" />
     <p>1000</p>
@@ -12,4 +12,5 @@
   </div>
   <h3>Kuji Podcast #20</h3>
   <button class="button-like">more...</button>
+  <ng-content></ng-content>
 </div>
