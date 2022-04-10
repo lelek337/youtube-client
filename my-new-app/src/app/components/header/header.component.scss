@@ -1,5 +1,11 @@
 @import '../../variablesSCSS.scss';
 
+.header {
+  background-color: $headerColor;
+  width: 100%;
+  height: 8vw;
+}
+
 .wrapper-header {
   display: flex;
   align-items: center;

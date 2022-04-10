@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
-import Data from '../../../../Youtube-response/youtube-response';
+import Data from 'src/Youtube-response/youtube-response';
 import { Response } from '../search-response.model';
 import { Item } from '../search-item.model';
 import { ShareService } from 'src/app/services/share-service.service';

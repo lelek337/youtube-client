@@ -1,17 +1,32 @@
-import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
-import { Item } from 'src/Youtube-response/youtube-response-type';
+import { Directive,  ElementRef,  HostBinding,  OnInit, Renderer2, AfterContentInit, Input } from '@angular/core';
+import { Item, Snippet } from '../components/search/search-item.model';
+import Data from 'src/Youtube-response/youtube-response';
 
 @Directive({
   selector: '[appBackground]'
 })
-export class BackgroundDirective implements OnInit {
+export class BackgroundDirective implements OnInit, AfterContentInit {
   @HostBinding('style.backgroundColor') background!: string;
-  // @Input() item!: Item;
-  constructor() { }
+
+  dataItems: Item[] = Data.items;
+  date = new Date;
+  color: string = 'red';
+  constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit () {
-    this.background = 'red'
-    // console.log(this.item.snippet.publishedAt)
+  }
+
+  ngAfterContentInit() {
+    const index = this.element.nativeElement.textContent;
+    const itemYear = this.dataItems[+index].snippet.publishedAt.slice(0, 4);
+    
+    const dateYear = this.date.getFullYear();
+     if (dateYear - +itemYear < 3) {
+      this.background = 'green'
+    }
+     if (dateYear - +itemYear > 3) {
+      this.background = 'red'
+    }
   }
 
 }

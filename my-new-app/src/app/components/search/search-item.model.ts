@@ -8,7 +8,7 @@ export interface Item {
   statistics: Statistics;
 }
 
-interface Snippet {
+export interface Snippet {
   publishedAt: string;
   channelId: string;
   title: string;
