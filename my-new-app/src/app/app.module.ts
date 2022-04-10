@@ -17,6 +17,7 @@ import { MainComponent } from './components/main/main.component';
 import { BackgroundDirective } from './directives/background.directive.ts.directive';
 import { ShareService } from './services/share-service.service';
 import { DateFilterDirective } from './directives/date-filter.directive';
+import { ViewFilterDirective } from './directives/view-filter.directive';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { DateFilterDirective } from './directives/date-filter.directive';
     MainComponent,
     BackgroundDirective,
     DateFilterDirective,
+    ViewFilterDirective,
   ],
   imports: [
     BrowserModule,

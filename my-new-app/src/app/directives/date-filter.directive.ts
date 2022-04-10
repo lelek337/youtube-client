@@ -18,22 +18,20 @@ export class DateFilterDirective {
   @HostListener('click') onclick() {
     let index = 0;
 
-    let indexStorage: string | null = sessionStorage.getItem('index');
+    let indexStorage: string | null = sessionStorage.getItem('indexDate');
     if (indexStorage) {
       index = +indexStorage
     }
 
     if (index === 0) {
-      //  this.dataItems.sort((a, b) => a.snippet.publishedAt.slice(0, 11) > b.snippet.publishedAt.slice(0, 11) ? 1 : -1);
       index++;
       this.filterService.doClick(this.dataItems.sort((a, b) => a.snippet.publishedAt.slice(0, 11) > b.snippet.publishedAt.slice(0, 11) ? 1 : -1));
     }else {
-      //  this.dataItems.sort((a, b) => a.snippet.publishedAt.slice(0, 11) < b.snippet.publishedAt.slice(0, 11) ? 1 : -1);
       index = 0;
       this.filterService.doClick(this.dataItems.sort((a, b) => a.snippet.publishedAt.slice(0, 11) < b.snippet.publishedAt.slice(0, 11) ? 1 : -1));
     }
 
-    sessionStorage.setItem('index', index.toString() )
+    sessionStorage.setItem('indexDate', index.toString() )
   };
 
 }

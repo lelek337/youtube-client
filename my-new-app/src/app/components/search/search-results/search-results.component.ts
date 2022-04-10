@@ -4,6 +4,7 @@ import { Response } from '../search-response.model';
 import { Item } from '../search-item.model';
 import { ShareService } from 'src/app/services/share-service.service';
 import { FilterDateService } from 'src/app/services/filter-date.service';
+import { FilterViewService } from 'src/app/services/filter-view.service';
 
 @Component({
   selector: 'app-search-results',
@@ -18,10 +19,12 @@ export class SearchResultsComponent implements OnInit {
 
   constructor(
     private share:ShareService,
-    private filterDateService:FilterDateService
+    private filterDateService:FilterDateService,
+    private filterViewService:FilterViewService
     ) {
     this.share.onClick.subscribe(cnt=>this.index = cnt);
     this.filterDateService.onClick.subscribe(cnt=>this.dataItem = cnt);
+    this.filterViewService.onClick.subscribe(cnt=>this.dataItem = cnt);
   }
 
   ngOnInit(): void {
