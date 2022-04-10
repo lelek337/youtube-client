@@ -10,7 +10,6 @@ export class BackgroundDirective implements OnInit, AfterContentInit {
 
   dataItems: Item[] = Data.items;
   date = new Date;
-  color: string = 'red';
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit () {
@@ -19,7 +18,7 @@ export class BackgroundDirective implements OnInit, AfterContentInit {
   ngAfterContentInit() {
     const index = this.element.nativeElement.textContent;
     const itemYear = this.dataItems[+index].snippet.publishedAt.slice(0, 4);
-    
+
     const dateYear = this.date.getFullYear();
      if (dateYear - +itemYear < 3) {
       this.background = 'green'

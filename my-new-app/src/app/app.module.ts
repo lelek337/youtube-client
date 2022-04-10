@@ -16,6 +16,8 @@ import { SortingComponent } from './components/header/sorting/sorting.component'
 import { MainComponent } from './components/main/main.component';
 import { BackgroundDirective } from './directives/background.directive.ts.directive';
 import { ShareService } from './services/share-service.service';
+import { DateFilterDirective } from './directives/date-filter.directive';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ShareService } from './services/share-service.service';
     LoginComponent,
     SortingComponent,
     MainComponent,
-    BackgroundDirective
+    BackgroundDirective,
+    DateFilterDirective,
   ],
   imports: [
     BrowserModule,

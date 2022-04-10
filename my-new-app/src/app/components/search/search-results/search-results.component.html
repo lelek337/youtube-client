@@ -1,5 +1,8 @@
 <div *ngIf="index === 2" [class]="'search-results'">
-  <app-search-item *ngFor="let item of dataItem; index as i" [item]="item"
+  <app-search-item
+    *ngFor="let item of dataItem; index as i"
+    [item]="item"
+    appDateFilter
     ><div [class]="'band'" appBackground>
       {{ i }}
     </div></app-search-item
