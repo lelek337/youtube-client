@@ -1,4 +1,4 @@
-<button (click)="onClick()">click me</button>
+
 <div *ngIf="index === 2" [class]="'search-results'">
   <app-search-item
     *ngFor="let item of dataItem | filterText: searchText; index as i"

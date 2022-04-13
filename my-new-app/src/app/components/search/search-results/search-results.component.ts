@@ -27,17 +27,10 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
     this.filterDateService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterViewService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterTextService.onText.subscribe(cnt=>this.searchText = cnt);
-    // console.log(this.filterTextService.textService)
   }
 
-  ngOnInit(): void {
-    // console.log(this.searchText);
-  }
-  ngAfterViewInit(): void {
+  ngOnInit(): void {}
 
-  }
-  onClick(){
-    // console.log(this.filterTextService.textService);
-  }
+  ngAfterViewInit(): void {}
 
 }
