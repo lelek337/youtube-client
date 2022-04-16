@@ -1,0 +1,19 @@
+@import '../../../variablesSCSS.scss';
+
+.sorting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  button {
+    padding-left: .5vw;
+    border-radius: .5vw;
+    color: $logoColor;
+  }
+  input {
+    margin-left: .5vw;
+  }
+  p {
+    color: $sortingColor;
+  }
+}
