@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
-import { Item } from '../components/search/search-item.model';
+import { Item } from '../auth/models/search-item.model';
 import { FilterViewService } from '../services/filter-view.service';
 
 @Directive({

@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
-import { Item } from '../components/search/search-item.model';
-import { SortingComponent } from '../components/header/sorting/sorting.component';
+import { Item } from '../../auth/models/search-item.model';
+import { SortingComponent } from '../../core/components/header/sorting/sorting.component';
 
 @Pipe({
   name: 'filterText'

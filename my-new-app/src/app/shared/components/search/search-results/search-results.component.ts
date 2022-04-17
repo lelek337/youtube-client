@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, Input, AfterViewInit } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
-import { Item } from '../search-item.model';
+import { Item } from '../../../../auth/models/search-item.model';
 import { ShareService } from 'src/app/services/share-service.service';
 import { FilterDateService } from 'src/app/services/filter-date.service';
 import { FilterViewService } from 'src/app/services/filter-view.service';
