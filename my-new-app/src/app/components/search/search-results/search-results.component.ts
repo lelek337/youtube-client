@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
 import { Item } from '../search-item.model';
 import { ShareService } from 'src/app/services/share-service.service';
@@ -12,7 +12,7 @@ import { FilterTextService } from 'src/app/services/filter-text.service';
   styleUrls: ['./search-results.component.scss'],
 })
 
-export class SearchResultsComponent implements OnInit, AfterViewInit {
+export class SearchResultsComponent {
 
   dataItem:Item[] = Data.items;
   index = 0;
@@ -28,9 +28,5 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
     this.filterViewService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterTextService.onText.subscribe(cnt=>this.searchText = cnt);
   }
-
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {}
 
 }
