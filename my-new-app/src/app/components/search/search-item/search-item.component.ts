@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from '../search-item.model'
 
 @Component({
@@ -6,13 +6,12 @@ import { Item } from '../search-item.model'
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
 
   @Input() item!: Item;
 
   constructor() {
    }
 
-  ngOnInit(): void {
-  }
+  
 }

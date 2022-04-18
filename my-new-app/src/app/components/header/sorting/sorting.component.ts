@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FilterTextService } from 'src/app/services/filter-text.service';
 
 @Component({
@@ -6,14 +6,10 @@ import { FilterTextService } from 'src/app/services/filter-text.service';
   templateUrl: './sorting.component.html',
   styleUrls: ['./sorting.component.scss']
 })
-export class SortingComponent implements OnInit {
+export class SortingComponent {
 
-  // filterText = new FilterTextService
   constructor(private sortService: FilterTextService) { }
 
-  ngOnInit(): void {
-
-  }
   onTextInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.sortService.changeText(target.value)
