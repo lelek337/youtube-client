@@ -1,6 +1,6 @@
-
 <div *ngIf="index === 2" [class]="'search-results'">
   <app-search-item
+    selector="app-search-item"
     *ngFor="let item of dataItem | filterText: searchText; index as i"
     erText
     [item]="item"

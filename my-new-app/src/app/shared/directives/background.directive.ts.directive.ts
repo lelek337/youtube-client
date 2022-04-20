@@ -1,5 +1,5 @@
 import { Directive,  ElementRef,  HostBinding,  OnInit, Renderer2, AfterContentInit, Input } from '@angular/core';
-import { Item, Snippet } from '../auth/models/search-item.model';
+import { Item, Snippet } from '../../auth/models/search-item.model';
 import Data from 'src/Youtube-response/youtube-response';
 
 @Directive({

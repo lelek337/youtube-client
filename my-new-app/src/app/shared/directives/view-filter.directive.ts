@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
-import { Item } from '../auth/models/search-item.model';
+import { Item } from '../../auth/models/search-item.model';
 import { FilterViewService } from '../services/filter-view.service';
 
 @Directive({
@@ -12,8 +12,7 @@ export class ViewFilterDirective {
   filterService: FilterViewService = new FilterViewService;
 
 
-  constructor(private element:ElementRef, private render: Renderer2, ) {
-       }
+  constructor(private element:ElementRef, private render: Renderer2, ) {}
 
   @HostListener('click') onclick() {
     let index = 0;

@@ -1,4 +1,4 @@
-@import '../../variablesSCSS.scss';
+@import '/src/app/variablesSCSS.scss';
 
 .header {
   background-color: $headerColor;
@@ -38,4 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  h3 {
+    margin: 0;
+  }
 }

@@ -1,6 +1,6 @@
 
 import { Component, OnInit, } from '@angular/core';
-import { ShareService } from 'src/app/services/share-service.service';
+import { ShareService } from 'src/app/shared/services/share-service.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

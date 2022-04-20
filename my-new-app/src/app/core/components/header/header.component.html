@@ -1,10 +1,10 @@
-<div class="header">
+<div [class]="'header'">
   <div class="wrapper">
     <div class="wrapper-header">
       <button class="button-header">
         <img src="../../assets/svg/logo.svg" alt="logo" />
       </button>
-      <app-search></app-search>
+      <app-search selector="app-search"></app-search>
       <button (click)="unloadSorting = !unloadSorting" class="setting">
         <img src="../../assets/svg/Vector.svg" alt="Vector" />
       </button>

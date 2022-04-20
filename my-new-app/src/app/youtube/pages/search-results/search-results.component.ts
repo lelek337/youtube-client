@@ -1,10 +1,10 @@
-import { Component, OnInit, Output, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
-import { Item } from '../../../../auth/models/search-item.model';
-import { ShareService } from 'src/app/services/share-service.service';
-import { FilterDateService } from 'src/app/services/filter-date.service';
-import { FilterViewService } from 'src/app/services/filter-view.service';
-import { FilterTextService } from 'src/app/services/filter-text.service';
+import { Item } from '../../../auth/models/search-item.model';
+import { ShareService } from 'src/app/shared/services/share-service.service';
+import { FilterDateService } from 'src/app/shared/services/filter-date.service';
+import { FilterViewService } from 'src/app/shared/services/filter-view.service';
+import { FilterTextService } from 'src/app/shared/services/filter-text.service';
 
 @Component({
   selector: 'app-search-results',
@@ -12,10 +12,10 @@ import { FilterTextService } from 'src/app/services/filter-text.service';
   styleUrls: ['./search-results.component.scss'],
 })
 
-export class SearchResultsComponent implements OnInit, AfterViewInit {
+export class SearchResultsComponent  {
 
   dataItem:Item[] = Data.items;
-  index = 0;
+  index = 2;
   searchText = '';
   constructor(
     private share:ShareService,
@@ -28,9 +28,4 @@ export class SearchResultsComponent implements OnInit, AfterViewInit {
     this.filterViewService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterTextService.onText.subscribe(cnt=>this.searchText = cnt);
   }
-
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {}
-
 }
