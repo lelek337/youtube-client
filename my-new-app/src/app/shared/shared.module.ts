@@ -6,10 +6,8 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { BackgroundDirective } from './directives/background.directive.ts.directive';
 import { DateFilterDirective } from './directives/date-filter.directive';
 import { ViewFilterDirective } from './directives/view-filter.directive';
-import { FilterDateService } from './services/filter-date.service';
-import { FilterTextService } from './services/filter-text.service';
-import { FilterViewService } from './services/filter-view.service';
-import { ShareService } from './services/share-service.service';
+
+
 
 @NgModule({
   declarations: [
@@ -19,22 +17,15 @@ import { ShareService } from './services/share-service.service';
     BackgroundDirective,
     DateFilterDirective,
     ViewFilterDirective,
-    // FilterDateService,
-    // FilterTextService,
-    // FilterViewService,
-    // ShareService,
+
   ],
   exports: [
     SearchComponent,
     SearchItemComponent,
     FilterTextPipe,
-    // BackgroundDirective,
-    // DateFilterDirective,
-    // ViewFilterDirective,
-    // FilterDateService,
-    // FilterTextService,
-    // FilterViewService,
-    // ShareService,
+    BackgroundDirective,
+    DateFilterDirective,
+    ViewFilterDirective,
   ],
   imports: [
     CommonModule

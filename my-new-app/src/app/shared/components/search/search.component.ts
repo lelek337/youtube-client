@@ -1,6 +1,6 @@
 
 import { Component, OnInit, } from '@angular/core';
-import { ShareService } from 'src/app/shared/services/share-service.service';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,14 +8,12 @@ import { ShareService } from 'src/app/shared/services/share-service.service';
 })
 export class SearchComponent implements OnInit {
 
-  index = 0;
 
-  constructor(private share: ShareService) {}
+
+  constructor() {}
 
   ngOnInit(): void {}
 
-  public  unloading() {
-    this.share.doClick();
-  }
+  
 
 }
