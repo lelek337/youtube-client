@@ -1,14 +1,14 @@
-
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../../services/registration.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
+
   form: FormGroup;
 
   constructor(private registration:RegistrationService ) {
@@ -18,11 +18,11 @@ export class LoginComponent implements OnInit {
     })
   }
 
+
   ngOnInit(): void {
   }
-
   onSubmit() {
-    this.registration.onLogin(this.form.value.login);
-    // console.log(this.form.value.login)
+    this.registration.onRegistration(this.form.value.login, this.form.value.pass);
   }
+
 }

@@ -1,0 +1,34 @@
+<form class="login-form" [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <h3>REGISTRATION</h3>
+  <label>login</label>
+  <input
+    type="text"
+    placeholder="Done Joe"
+    class="input-login"
+    name="login"
+    formControlName="login"
+    required
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="form.controls['login'].invalid && form.controls['login'].touched"
+  >
+    Login not specified
+  </div>
+  <label>password</label>
+  <input
+    type="password"
+    placeholder="******"
+    class="input-password"
+    name="pass"
+    formControlName="pass"
+    required
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="form.controls['pass'].invalid && form.controls['pass'].touched"
+  >
+    Password not specified
+  </div>
+  <button class="button-login" type="submit">Registration</button>
+</form>
