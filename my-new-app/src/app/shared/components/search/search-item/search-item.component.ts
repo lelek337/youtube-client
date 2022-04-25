@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MoreService } from 'src/app/youtube/services/more.service';
 import { Item } from '../../../../auth/models/search-item.model'
 
 @Component({
@@ -6,13 +7,16 @@ import { Item } from '../../../../auth/models/search-item.model'
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent  {
 
   @Input() item!: Item;
 
-  constructor() {
+  constructor(private more:MoreService) {
    }
 
-  ngOnInit(): void {
+  onClick() {
+
+    console.log('hello')
+
   }
 }

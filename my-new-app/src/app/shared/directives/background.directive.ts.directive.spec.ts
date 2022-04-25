@@ -1,8 +1,8 @@
-import { Background.Directive.TsDirective } from './background.directive.ts.directive';
+import { BackgroundDirective } from './background.directive.ts.directive';
 
-describe('Background.Directive.TsDirective', () => {
+describe('BackgroundDirective', () => {
   it('should create an instance', () => {
-    const directive = new Background.Directive.TsDirective();
+    const directive = new BackgroundDirective();
     expect(directive).toBeTruthy();
   });
 });

@@ -19,11 +19,13 @@
     width: 1vw;
     padding-left: .5vw;
   }
+  p {
+    margin-top: .5vh;
+  }
 }
 
 .button-like {
   background-color: $logoColor;
-  border: none;
   border-radius: .5vw;
 }
 

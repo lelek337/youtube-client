@@ -1,6 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../../services/registration.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { RegistrationService } from '../../services/registration.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   form: FormGroup;
 
   constructor(private registration:RegistrationService ) {
@@ -18,11 +18,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit() {
     this.registration.onLogin(this.form.value.login);
-    // console.log(this.form.value.login)
   }
 }

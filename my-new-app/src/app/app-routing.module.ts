@@ -5,7 +5,7 @@ import { RegistrationComponent } from './auth/components/registration/registrati
 import { AuthGuard } from './auth/guards/auth.guard';
 import { EmptyComponent } from './core/components/empty/empty.component';
 import { ErrorComponent } from './core/components/error/error.component';
-import { SearchResultsComponent } from './youtube/pages/search-results/search-results.component';
+
 
 
 const routes: Routes = [
@@ -29,7 +29,6 @@ const routes: Routes = [
         path: 'main',
         loadChildren: () =>
         import('./youtube/youtube.module').then(a => a.YoutubeModule),
-        component: SearchResultsComponent,
         canLoad: [AuthGuard],
       },
       {

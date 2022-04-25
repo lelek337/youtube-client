@@ -1,16 +1,16 @@
 <div class="wrapper-card">
   <img src="{{ item.snippet.thumbnails.medium.url }}" alt="caption" />
   <div class="likes">
-    <img src="src/assets/svg/viewed.svg" alt="viewed" />
+    <img src="./assets/svg/viewed.svg" alt="viewed" />
     <p>{{ item.statistics.viewCount }}</p>
-    <img src="src/assets/svg/liked.svg" alt="liked" />
+    <img src="./assets/svg/liked.svg" alt="liked" />
     <p>{{ item.statistics.likeCount }}</p>
-    <img src="src/assets/svg/dislike.svg" alt="dislike" />
+    <img src="./assets/svg/dislike.svg" alt="dislike" />
     <p>{{ item.statistics.dislikeCount }}</p>
-    <img src="src/assets/svg/content-copy.svg" alt="content" />
+    <img src="./assets/svg/content-copy.svg" alt="content" />
     <p>{{ item.statistics.commentCount }}</p>
   </div>
-  <h3>Kuji Podcast #20</h3>
-  <button class="button-like">more...</button>
+  <h3>Kuji Podcast #{{ index }}</h3>
+  <button class="button-like" counting>more...</button>
   <ng-content></ng-content>
 </div>

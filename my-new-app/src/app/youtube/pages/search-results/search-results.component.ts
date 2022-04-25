@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener} from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
 import { Item } from '../../../auth/models/search-item.model';
 import { FilterDateService } from 'src/app/shared/services/filter-date.service';
 import { FilterViewService } from 'src/app/shared/services/filter-view.service';
 import { FilterTextService } from 'src/app/shared/services/filter-text.service';
+
 
 
 @Component({
@@ -12,22 +13,22 @@ import { FilterTextService } from 'src/app/shared/services/filter-text.service';
   styleUrls: ['./search-results.component.scss'],
 })
 
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent  {
 
   dataItem:Item[] = Data.items;
   searchText = '';
   constructor(
-
     private filterDateService:FilterDateService,
     private filterViewService:FilterViewService,
     public filterTextService:FilterTextService,
     ) {
-
     this.filterDateService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterViewService.onClick.subscribe(cnt=>this.dataItem = cnt);
     this.filterTextService.onText.subscribe(cnt=>this.searchText = cnt);
   }
-  ngOnInit(): void {
-    console.log('hello')
+
+  @HostListener('click', ['$event.target'])
+  onClick() {
+    console.log(event?.target)
   }
 }

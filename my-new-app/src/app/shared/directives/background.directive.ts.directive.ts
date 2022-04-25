@@ -1,19 +1,16 @@
-import { Directive,  ElementRef,  HostBinding,  OnInit, Renderer2, AfterContentInit, Input } from '@angular/core';
-import { Item, Snippet } from '../../auth/models/search-item.model';
+import { Item, } from '../../auth/models/search-item.model';
+import { Directive, ElementRef, HostBinding, Renderer2, AfterContentInit } from '@angular/core';
 import Data from 'src/Youtube-response/youtube-response';
 
 @Directive({
-  selector: '[appBackground]'
+  selector: '[appBackground]',
 })
-export class BackgroundDirective implements OnInit, AfterContentInit {
+export class BackgroundDirective implements  AfterContentInit {
   @HostBinding('style.backgroundColor') background!: string;
 
   dataItems: Item[] = Data.items;
   date = new Date;
   constructor(private element: ElementRef, private renderer: Renderer2) { }
-
-  ngOnInit () {
-  }
 
   ngAfterContentInit() {
     const index = this.element.nativeElement.textContent;
@@ -21,11 +18,10 @@ export class BackgroundDirective implements OnInit, AfterContentInit {
 
     const dateYear = this.date.getFullYear();
      if (dateYear - +itemYear < 3) {
-      this.background = 'green'
+      this.background = 'green';
     }
      if (dateYear - +itemYear > 3) {
-      this.background = 'red'
+      this.background = 'red';
     }
   }
-
 }

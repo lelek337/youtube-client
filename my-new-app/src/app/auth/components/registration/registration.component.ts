@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../../services/registration.service';
 
@@ -7,7 +7,7 @@ import { RegistrationService } from '../../services/registration.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent  {
 
   form: FormGroup;
 
@@ -18,9 +18,6 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
-
-  ngOnInit(): void {
-  }
   onSubmit() {
     this.registration.onRegistration(this.form.value.login, this.form.value.pass);
   }
