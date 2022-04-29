@@ -13,7 +13,7 @@ export class RegistrationService {
     const login = localStorage.getItem('login');
 
     if (text !== login) {
-      this.router.navigate(['/registration']);
+      this.router.navigate(['/login/registration']);
     }
   }
 

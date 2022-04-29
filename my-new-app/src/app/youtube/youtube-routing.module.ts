@@ -7,11 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: SearchResultsComponent,
+    pathMatch: 'full',
+
   },
   {
     path: 'more',
     component: DetailsComponent,
   }
+
 ];
 
 @NgModule({
@@ -19,7 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class YoutubeRoutingModule {
-
-
-
 }

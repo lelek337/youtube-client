@@ -1,13 +1,16 @@
 <div [class]="'search-results'">
   <app-search-item
     selector="app-search-item"
-    *ngFor="let item of dataItem | filterText: searchText; index as i"
+    *ngFor="let item of dataItem | filterText: searchText; index as idx"
     erText
     [item]="item"
     appDateFilter
     appViewFilter
-    ><div [class]="'band'" appBackground>
-      {{ i }}
+  >
+    <h3>Kuji Podcast #{{ idx + 1 }}</h3>
+    <button class="button-like" [id]="idx" appMore counting>more...</button>
+    <div [class]="'band'" appBackground>
+      {{ idx }}
     </div></app-search-item
   >
 </div>

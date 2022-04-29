@@ -1,29 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/components/login/login.component';
-import { RegistrationComponent } from './auth/components/registration/registration.component';
+import {  RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/guards/auth.guard';
-import { EmptyComponent } from './core/components/empty/empty.component';
 import { ErrorComponent } from './core/components/error/error.component';
-
-
 
 const routes: Routes = [
   {
       path: '',
-    component: EmptyComponent,
-  },
-  {
-    path: 'registration',
-    loadChildren: () =>
-    import('./auth/auth.module').then(a => a.AuthModule),
-    component: RegistrationComponent,
-  },
+       redirectTo: 'login',
+      pathMatch: 'full',
+   },
+   {
+     path: 'home',
+     redirectTo: 'main',
+     pathMatch: 'full',
+   },
       {
         path: 'login',
         loadChildren: () =>
         import('./auth/auth.module').then(a => a.AuthModule),
-        component: LoginComponent,
       },
       {
         path: 'main',
@@ -38,13 +33,12 @@ const routes: Routes = [
       {
         path: '**',
         redirectTo: '404'
-      }
-
+     }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
