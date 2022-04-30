@@ -13,12 +13,66 @@ export class LoginComponent {
 
   constructor(private registration:RegistrationService ) {
     this.form = new FormGroup({
-      login: new FormControl('', Validators.required),
-      pass: new FormControl('', Validators.required)
+      email: new FormControl('', [Validators.required, Validators.email]),
+      pass: new FormControl('', [Validators.required, this.checkForLength, this.checkForLetters,this.checkLettersNumbers, this.checkSpecialCharacter])
     })
   }
 
   onSubmit() {
     this.registration.onLogin(this.form.value.login);
+    console.log(this.form.value.pass)
+  }
+
+  checkForLength(control:FormControl) {
+    if (control.value.length <= 8){
+      return {
+        'lengthError': true,
+      };
+    }
+    return null;
+  }
+
+  checkForLetters(control:FormControl) {
+    const capitalLetters = control.value.split().filter((m:string) => {
+      m === m.toUpperCase();
+    })
+    const smallLetters = control.value.split().filter((m:string) => {
+      m === m.toLowerCase();
+    })
+    if (capitalLetters || smallLetters) {
+      return {
+        'lettersError': true,
+      }
+    }
+    return null;
+  }
+  checkLettersNumbers(control:FormControl) {
+    const checkLetters = control.value.split().filter((m:string) => {
+      +m === Number(m);
+    })
+    const checkNumbers = control.value.split().filter((m:string) => {
+      m === String(m);
+    })
+    if (checkLetters || checkNumbers) {
+      return {
+        'numberLetterError': true,
+      }
+    }
+    return null;
+  }
+  checkSpecialCharacter(control:FormControl) {
+    const specialCharacter = control.value.split().filter((m:string) => {
+      m === '!';
+      m === '@';
+      m === ']';
+      m === '#';
+      m === '?';
+    });
+    if (specialCharacter) {
+      return {
+        'specialCharacterError': true,
+      }
+    }
+    return null;
   }
 }
