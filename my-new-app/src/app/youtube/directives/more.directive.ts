@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { MoreService } from '../services/more.service';
 
 @Directive({
@@ -8,11 +8,8 @@ export class MoreDirective implements AfterViewInit{
 
   constructor(private element:ElementRef, private moreService:MoreService) { }
 
-
   @HostListener('click') ngAfterViewInit() {
     const id = this.element.nativeElement.id
     this.moreService.moreClick(+id);
-    console.log(this.element.nativeElement.id)
-
   }
 }

@@ -6,15 +6,15 @@ import { ErrorComponent } from './core/components/error/error.component';
 
 const routes: Routes = [
   {
-      path: '',
-       redirectTo: 'login',
-      pathMatch: 'full',
-   },
-   {
-     path: 'home',
-     redirectTo: 'main',
-     pathMatch: 'full',
-   },
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  //  {
+  //    path: 'home',
+  //    redirectTo: 'main',
+  //    pathMatch: 'full',
+  //  },
       {
         path: 'login',
         loadChildren: () =>
@@ -34,7 +34,6 @@ const routes: Routes = [
         path: '**',
         redirectTo: '404'
      }
-
 ];
 
 @NgModule({

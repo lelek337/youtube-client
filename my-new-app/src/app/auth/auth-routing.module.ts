@@ -7,15 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    // children: [
   },
-      {
-        path: 'registration',
-        component: RegistrationComponent,
-      },
-      // ]
-  //  },
-
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
 ];
 
 @NgModule({

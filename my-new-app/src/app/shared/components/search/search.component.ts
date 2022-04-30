@@ -13,5 +13,4 @@ export class SearchComponent {
   routerMain() {
     this.router.navigate(['/main']);
   }
-
 }

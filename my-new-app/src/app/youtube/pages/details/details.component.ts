@@ -16,5 +16,4 @@ export class DetailsComponent {
     this.moreService.onClick.subscribe(cnt=>this.index = cnt);
     console.log(this.index);
    }
-
 }

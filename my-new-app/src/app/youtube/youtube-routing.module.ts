@@ -7,14 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SearchResultsComponent,
-    pathMatch: 'full',
-
   },
   {
     path: 'more',
     component: DetailsComponent,
   }
-
 ];
 
 @NgModule({
