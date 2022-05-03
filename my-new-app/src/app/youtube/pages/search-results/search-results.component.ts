@@ -1,10 +1,10 @@
 import { Component} from '@angular/core';
-import Data from 'src/Youtube-response/youtube-response';
 import { Item } from '../../../auth/models/search-item.model';
 import { FilterDateService } from 'src/app/shared/services/filter-date.service';
 import { FilterViewService } from 'src/app/shared/services/filter-view.service';
 import { FilterTextService } from 'src/app/shared/services/filter-text.service';
 import { Router } from '@angular/router';
+import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
 
 @Component({
   selector: 'app-search-results',
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 
 export class SearchResultsComponent  {
-  dataItem:Item[] = Data.items;
+  dataItem:Item[] = new YoutubeResponseService().response.items;
   searchText = '';
   idx!:number;
   constructor(

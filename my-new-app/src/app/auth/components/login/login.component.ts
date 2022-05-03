@@ -20,7 +20,6 @@ export class LoginComponent {
 
   onSubmit() {
     this.registration.onLogin(this.form.value.login);
-    console.log(this.form.value.pass)
   }
 
   checkForLength(control:FormControl) {
@@ -33,13 +32,13 @@ export class LoginComponent {
   }
 
   checkForLetters(control:FormControl) {
-    const capitalLetters = control.value.split().filter((m:string) => {
+    const capitalLetters = control.value.split('').filter((m:string) => {
       m === m.toUpperCase();
     })
-    const smallLetters = control.value.split().filter((m:string) => {
+    const smallLetters = control.value.split('').filter((m:string) => {
       m === m.toLowerCase();
     })
-    if (capitalLetters || smallLetters) {
+    if (!(capitalLetters || smallLetters)) {
       return {
         'lettersError': true,
       }
@@ -47,13 +46,13 @@ export class LoginComponent {
     return null;
   }
   checkLettersNumbers(control:FormControl) {
-    const checkLetters = control.value.split().filter((m:string) => {
+    const checkLetters = control.value.split('').filter((m:string) => {
       +m === Number(m);
     })
-    const checkNumbers = control.value.split().filter((m:string) => {
+    const checkNumbers = control.value.split('').filter((m:string) => {
       m === String(m);
     })
-    if (checkLetters || checkNumbers) {
+    if (!(checkLetters || checkNumbers)) {
       return {
         'numberLetterError': true,
       }
@@ -61,14 +60,13 @@ export class LoginComponent {
     return null;
   }
   checkSpecialCharacter(control:FormControl) {
-    const specialCharacter = control.value.split().filter((m:string) => {
-      m === '!';
-      m === '@';
-      m === ']';
-      m === '#';
-      m === '?';
+    const specialCharacter = control.value.split('').filter((m:string) => {
+      if (m === '!' || m === '@' || m === ']' || m == '#' || m === '?') {
+        return m;
+      }
+      return null;
     });
-    if (specialCharacter) {
+    if (!specialCharacter) {
       return {
         'specialCharacterError': true,
       }

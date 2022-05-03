@@ -6,12 +6,9 @@ import { AuthGuard } from 'src/app/auth/guards/auth.guard'
   providedIn: 'root'
 })
 export class RegistrationService {
-
   constructor(private router:Router, private authGuard:AuthGuard) { }
-
   onLogin(text:string) {
     const login = localStorage.getItem('login');
-
     if (text !== login) {
       this.router.navigate(['/login/registration']);
     }

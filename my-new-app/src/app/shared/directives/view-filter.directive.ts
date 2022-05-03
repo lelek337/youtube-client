@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
-import Data from 'src/Youtube-response/youtube-response';
+import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
 import { Item } from '../../auth/models/search-item.model';
 import { FilterViewService } from '../services/filter-view.service';
 
@@ -8,7 +8,7 @@ import { FilterViewService } from '../services/filter-view.service';
 })
 export class ViewFilterDirective {
 
- dataItems: Item[] = Data.items;
+ dataItems: Item[] = new YoutubeResponseService().response.items;
   filterService: FilterViewService = new FilterViewService;
 
 

@@ -5,12 +5,8 @@ import { Item } from '../../auth/models/search-item.model';
   providedIn: 'root'
 })
 export class FilterDateService {
-  constructor() { }
-
   onClick:EventEmitter<Item[]> = new EventEmitter();
   public doClick(i: Item[]){
     this.onClick.emit(i);
   }
-
-
 }

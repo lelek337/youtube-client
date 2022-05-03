@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 import { DetailsComponent } from './pages/details/details.component';
 import { MoreDirective } from './directives/more.directive';
 
-
 @NgModule({
   declarations: [
     SearchResultsComponent,

@@ -1,16 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import Data from 'src/Youtube-response/youtube-response';
+import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
 import { Item } from '../../auth/models/search-item.model';
 import { SortingComponent } from '../../core/components/header/sorting/sorting.component';
-
 @Pipe({
   name: 'filterText'
 })
 export class FilterTextPipe implements PipeTransform {
+dataItem:Item[] = new YoutubeResponseService().response.items
 
-  
   public transform(dataItems:Item[], searchText:string) {
-
    if (searchText.length === 0) {
       return dataItems;
     }
@@ -21,5 +19,4 @@ export class FilterTextPipe implements PipeTransform {
       )
       : dataItems;
   }
-
 }
