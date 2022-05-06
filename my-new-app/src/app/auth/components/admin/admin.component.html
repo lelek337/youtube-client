@@ -47,5 +47,16 @@
       >The video link is invalid</span
     >
   </div>
+  <label>Date</label>
+  <input type="date" formControlName="date" />
+  <div>
+    <span *ngIf="form.controls['date'].invalid && form.controls['date'].touched"
+      >PPlease enter a creation date</span
+    >
+    <span
+      *ngIf="form.controls['date'].errors?.['dateError'] && form.controls['date'].touched"
+      >The date is invalid</span
+    >
+  </div>
   <button type="submit" [disabled]="form.invalid">Create card</button>
 </form>
