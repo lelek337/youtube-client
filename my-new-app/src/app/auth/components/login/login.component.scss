@@ -1,0 +1,32 @@
+@import '/src/app/variablesSCSS.scss';
+.login-form {
+  margin-top: 4vw;
+  margin-left: 40vw;
+  width: 20vw;
+  height: 25vw;
+  background-color: $headerColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .button-login {
+    margin-top: 2vw;
+    margin-left: 5vw;
+    width: 5vw;
+    height: 2vw;
+    background-color: $logoColor;
+    border-radius: .5vw;
+  }
+    label {
+      color: $sortingColor;
+      margin: 1vw 7vw 0 0;
+    }
+    input.ng-touched.ng-invalid {
+      border: solid red 2px;
+    }
+
+    input.ng-touched.ng-valid {
+      border: solid green 2px;
+    }
+
+}

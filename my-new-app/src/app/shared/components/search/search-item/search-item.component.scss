@@ -1,0 +1,28 @@
+@import 'src/app/variablesSCSS.scss';
+
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $headerColor;
+  img {
+    width: 90%;
+  }
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 1vw;
+    padding-left: .5vw;
+  }
+  p {
+    margin-top: .5vh;
+  }
+}
+
+
+

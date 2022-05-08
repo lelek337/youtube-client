@@ -1,0 +1,23 @@
+<div class="details-card">
+  <button><</button>
+  <img
+    src="{{ dataItem[index].snippet.thumbnails.medium.url }}"
+    alt="caption"
+    class="caption"
+  />
+  <div class="information">
+    <h2>Kuji Podcast #{{ index }}</h2>
+    <h3>Description:</h3>
+    <p>{{ dataItem[index].snippet.description }}</p>
+    <div class="card-likes">
+      <img src="./assets/svg/viewed.svg" alt="viewed" />
+      <p>{{ dataItem[index].statistics.viewCount }}</p>
+      <img src="./assets/svg/liked.svg" alt="liked" />
+      <p>{{ dataItem[index].statistics.likeCount }}</p>
+      <img src="./assets/svg/dislike.svg" alt="dislike" />
+      <p>{{ dataItem[index].statistics.dislikeCount }}</p>
+      <img src="./assets/svg/content-copy.svg" alt="content" />
+      <p>{{ dataItem[index].statistics.commentCount }}</p>
+    </div>
+  </div>
+</div>

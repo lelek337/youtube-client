@@ -1,0 +1,44 @@
+<form class="login-form" [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <h3>LOGIN</h3>
+  <label>login email</label>
+  <input
+    type="text"
+    placeholder="Please enter a login email"
+    class="input-login"
+    formControlName="email"
+  />
+  <p
+    class="alert alert-danger"
+    *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
+  >
+    The login email is invalid
+  </p>
+  <label>password</label>
+  <input
+    type="password"
+    placeholder="******"
+    class="input-password"
+    formControlName="pass"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="form.controls['pass'].invalid && form.controls['pass'].touched"
+  >
+    Your password isn't strong enough
+    <span *ngIf="form.controls['pass'].errors?.['lengthError']"
+      >at least 8 characters</span
+    >
+    <span *ngIf="form.controls['pass'].errors?.['checkForLetters']"
+      >a mixture of both uppercase and lowercase letters</span
+    >
+    <span *ngIf="form.controls['pass'].errors?.['numberLetterError']"
+      >a mixture of letters and numbers</span
+    >
+    <span *ngIf="form.controls['pass'].errors?.['specialCharacterError']"
+      >inclusion of at least one special character, e.g., ! @ # ? ]</span
+    >
+  </div>
+  <button class="button-login" type="submit" [disabled]="form.invalid">
+    Login
+  </button>
+</form>
