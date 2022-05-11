@@ -4,7 +4,11 @@
       <button class="button-header">
         <img src="../../assets/svg/logo.svg" alt="logo" />
       </button>
-      <app-search selector="app-search"></app-search>
+      <input
+        type="text"
+        placeholder="type to search..."
+        (input)="search($event)"
+      />
       <button (click)="unloadSorting = !unloadSorting" class="setting">
         <img src="../../assets/svg/Vector.svg" alt="Vector" />
       </button>

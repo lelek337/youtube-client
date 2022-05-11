@@ -24,7 +24,7 @@ const routes: Routes = [
         path: 'main',
         loadChildren: () =>
         import('./youtube/youtube.module').then(a => a.YoutubeModule),
-        canLoad: [AuthGuard],
+        // canLoad: [AuthGuard],
       },
       {
         path: '404',
