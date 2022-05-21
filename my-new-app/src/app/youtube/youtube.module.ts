@@ -5,6 +5,9 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
 import { SharedModule } from '../shared/shared.module';
 import { DetailsComponent } from './pages/details/details.component';
 import { MoreDirective } from './directives/more.directive';
+import { YoutubeInterceptor } from './services/youtube.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import YoutubeService from './services/youtube.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { MoreDirective } from './directives/more.directive';
     CommonModule,
     YoutubeRoutingModule,
     SharedModule
-  ]
+  ],
+  providers: []
 })
 export class YoutubeModule { }

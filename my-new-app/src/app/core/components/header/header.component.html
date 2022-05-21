@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="wrapper-header">
       <button class="button-header">
-        <img src="../../assets/svg/logo.svg" alt="logo" />
+        <img src="./assets/svg/logo.svg" alt="logo" />
       </button>
       <input
         type="text"
@@ -10,13 +10,14 @@
         (input)="search($event)"
       />
       <button (click)="unloadSorting = !unloadSorting" class="setting">
-        <img src="../../assets/svg/Vector.svg" alt="Vector" />
+        <img src="./assets/svg/Vector.svg" alt="Vector" />
       </button>
       <div class="user-name">
         <h3 (click)="routerLogin()">user name</h3>
-        <img src="../../assets/svg/login.svg" alt="login" />
+        <img src="./assets/svg/login.svg" alt="login" />
       </div>
     </div>
     <app-sorting *ngIf="unloadSorting"></app-sorting>
   </div>
+  <!-- <button (click)="qwe()">qwe</button> -->
 </div>

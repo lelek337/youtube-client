@@ -1,9 +1,11 @@
-import { LocalizedString } from "@angular/compiler";
 
 export interface Item {
   kind: string;
   etag: string;
-  id: string;
+   id: {
+      kind?: string,
+      videoId: string
+      };
   snippet: Snippet;
   statistics: Statistics;
 }
