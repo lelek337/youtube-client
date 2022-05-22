@@ -1,21 +1,18 @@
-<button (click)="qwe()">qwe</button>
 <div [class]="'search-results'">
-  <ng-template *ngIf="true">
-    <app-search-item
-      selector="app-search-item"
-      *ngFor="let item of resItem | filterText: searchText; index as idx"
-      erText
-      [item]="item"
-      appDateFilter
-      appViewFilter
-    >
-      <h3>Kuji Podcast #{{ idx + 1 }}</h3>
-      <button class="button-like" [id]="idx" (click)="onClick()" appMore>
-        more...
-      </button>
-      <div [class]="'band'" appBackground>
-        {{ idx }}
-      </div>
-    </app-search-item>
-  </ng-template>
+  <app-search-item
+    selector="app-search-item"
+    *ngFor="let item of fetchedVideos; index as idx"
+    erText
+    [item]="item"
+    appDateFilter
+    appViewFilter
+  >
+    <h3>Kuji Podcast #{{ idx + 1 }}</h3>
+    <button class="button-like" [id]="idx" (click)="onClick()" appMore>
+      more...
+    </button>
+    <div [class]="'band'" appBackground>
+      {{ idx }}
+    </div>
+  </app-search-item>
 </div>

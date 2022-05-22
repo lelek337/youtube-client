@@ -19,7 +19,8 @@ export class HeaderComponent {
 
   search(event: Event) {
     const target = event.target as HTMLInputElement;
-    this.youtubeService.searchQuery(target.value);
+    // this.youtubeService.searchQuery(target.value);
     // this.youtubeService.loadPlaylist(target.value).subscribe(res => console.log(res));
+    this.youtubeService.searchPosts(target.value);
   }
 }

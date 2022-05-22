@@ -4,7 +4,7 @@ import { BehaviorSubject, debounceTime, distinctUntilChanged, map, mergeMap, Obs
 import { Item } from "src/app/auth/models/search-item.model";
 import { Response } from "src/app/auth/models/search-response.model";
 import { YoutubeResponseService } from "src/app/auth/services/youtube-response.service";
-// import { SearchResultsComponent } from "../pages/search-results/search-results.component";
+
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +48,41 @@ export default class YoutubeService {
     }
     return of([]);
   }
+  public queryValue = new Subject<string>();
+
+    searchPosts(userId: string) {
+    this.queryValue.next(userId);
+  }
+
+    videos$ = this.queryValue.pipe(
+    this.liveSearch((res) => this.fetchvideos(res)),
+  );
+
+    liveSearch<T, R>(
+    dataCb: (query: T) => Observable<R>,
+    delay = 550,
+  ) {
+    return (source$: Observable<T>) => source$.pipe(
+      debounceTime(delay),
+      distinctUntilChanged(),
+      switchMap(dataCb),
+    );
+  }
+
+    fetchvideos(name: string): Observable<any> {
+    if (name.length >= 3) {
+      return this.http.get<any>(`/search?&type=video&part=snippet&maxResults=10&q=${name}`).pipe(
+        map((videoResponse: any) => {
+          const idList: string[] = videoResponse.items
+            .map((item: any) => item.id.videoId);
+          return idList;
+        }),
+        mergeMap((idList) => this.http.get(`/videos?&id=${idList.join(',')}&part=snippet,statistics`)),
+      );
+    }
+    return of([]);
+  }
+
 allItem!: Observable<Item[]>;
   getVideo(videoIds: string[]): Observable<any> {
     let searchParams = new HttpParams();
