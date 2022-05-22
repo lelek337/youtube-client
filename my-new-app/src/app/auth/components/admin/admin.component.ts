@@ -13,7 +13,8 @@ export class AdminComponent {
       title: new FormControl('', [Validators.required, this.checkForLength, this.checkForLong ]),
       description: new FormControl('', [Validators.nullValidator, this.checkDescriptionLong]),
       img: new FormControl('', [Validators.required, this.checkForImg]),
-      linkVideo: new FormControl('', [Validators.required, this.checkForVideo])
+      linkVideo: new FormControl('', [Validators.required, this.checkForVideo]),
+      date: new FormControl('', [Validators.required, this.checkForDate])
     })
   }
   checkForLength(control:FormControl) {
@@ -53,7 +54,18 @@ export class AdminComponent {
     const checkVideo:string = control.value.split('').slice(-3);
     if (!(checkVideo === 'avi' || checkVideo === 'mkv' || checkVideo === 'mov' || checkVideo === 'flv')) {
       return {
-        videoError: true,
+        'videoError': true,
+      }
+    }
+    return null;
+  }
+  checkForDate(control:FormControl) {
+    const realDate = new Date();
+    const checkDate = control.value;
+    console.log('date=', realDate.getFullYear(),realDate.getMonth(),realDate.getDay(), 'checkDate=',  checkDate.slice(8, 10))
+    if (realDate.getFullYear() >= checkDate.slice(0, 4) && realDate.getMonth() >= checkDate.slice(5, 7) && realDate.getDay() >= checkDate.slice(8, 10)) {
+      return {
+        'dateError': true,
       }
     }
     return null;

@@ -19,7 +19,10 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    this.registration.onLogin(this.form.value.login);
+    console.log(this.form.value.email)
+    console.log(this.form.value.pass)
+    this.registration.login(this.form.value.email, this.form.value.pass );
+
   }
 
   checkForLength(control:FormControl) {

@@ -8,4 +8,5 @@ import { Item } from '../../../../auth/models/search-item.model'
 })
 export class SearchItemComponent  {
   @Input() item!: Item;
+
 }

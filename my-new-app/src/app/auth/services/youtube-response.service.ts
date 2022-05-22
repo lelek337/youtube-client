@@ -1,11 +1,39 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Item } from '../models/search-item.model';
 import { Response } from '../models/search-response.model';
+import YoutubeService from 'src/app/youtube/services/youtube.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class YoutubeResponseService {
-   response:Response =  {
+  private searchQuerySubject = new BehaviorSubject<string>('');
+  searchQuery$: Observable<string> = this.searchQuerySubject.asObservable();
+
+  // constructor(private youtubeService: YoutubeService){}
+  static response: Response;
+
+  addItem(items: Item[]){
+   items.map(item => this.response.items.push(item))
+   console.log(this.response.items)
+  }
+
+
+  searchQuery(query: string) {
+    this.searchQuerySubject.next(query);
+    // console.log(query);
+  }
+
+  loadPlaylist(query: string): Observable<Item[]> {
+    return of([]);
+  }
+
+  getVideo(videoIds: string[]): Observable<any> | null {
+    return null;
+  }
+
+  response:Response =  {
   kind: 'youtube#videoListResponse',
   etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4"',
   pageInfo: {
@@ -16,7 +44,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/tmmI1yiRrmLWlKikXk1gD3TXsUI"',
-      id: 'YN8zNnV0sK8',
+      id: {
+        videoId: 'YN8zNnV0sK8'
+      },
       snippet: {
         publishedAt: '2019-05-30T12:42:19.000Z',
         channelId: 'UCg8ss4xW9jASrqWGP30jXiw',
@@ -96,7 +126,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/uto79F2R8W05GFpiUAcLdFGs7PQ"',
-      id: 'Fdf5aTYRW0E',
+      id: {
+        videoId: 'Fdf5aTYRW0E'
+      },
       snippet: {
         publishedAt: '2019-01-23T17:46:58.000Z',
         channelId: 'UC29ju8bIPH5as8OGnQzwJyA',
@@ -155,7 +187,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/6e0k9ik7TThWpqueHGOhTRIN1-A"',
-      id: 'k5E2AVpwsko',
+      id: {
+        videoId: 'k5E2AVpwsko'
+      },
       snippet: {
         publishedAt: '2017-09-05T16:48:15.000Z',
         channelId: 'UCWv7vMbMWH4-V0ZXdmDpPBA',
@@ -235,7 +269,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/cDwx4Ds5-J9CmiqmazUetzrLZKY"',
-      id: 'Rf54BH35yrY',
+      id: {
+        videoId: 'Rf54BH35yrY'
+      },
       snippet: {
         publishedAt: '2019-09-04T15:00:12.000Z',
         channelId: 'UCg8ss4xW9jASrqWGP30jXiw',
@@ -314,7 +350,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/_99tEunMszVYvCj2-1aUTKgOoSY"',
-      id: 'm0yGx2MGZWg',
+      id: {
+        videoId: 'm0yGx2MGZWg'
+      },
       snippet: {
         publishedAt: '2018-05-13T07:44:08.000Z',
         channelId: 'UCe_H8hzx9WV7Ca7Ps5gt72Q',
@@ -388,7 +426,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/GuGydXnkvpl-L4ntYhAaLNiseZ4"',
-      id: 'VAkio68d51A',
+      id: {
+        videoId: 'VAkio68d51A'
+      },
       snippet: {
         publishedAt: '2019-02-25T00:09:23.000Z',
         channelId: 'UCZ9qFEC82qM6Pk-54Q4TVWA',
@@ -466,7 +506,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/u2qq5ltpXouoIrpkJgGLu8YOIeg"',
-      id: 'u1VCxpvDgsk',
+      id: {
+        videoId: 'u1VCxpvDgsk'
+      },
       snippet: {
         publishedAt: '2018-12-01T15:00:05.000Z',
         channelId: 'UCvuY904el7JvBlPbdqbfguw',
@@ -535,7 +577,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/96JEWzuOaAgaHrcnKhmatlZzPME"',
-      id: 'rc3E4tplFCU',
+      id: {
+        videoId: 'rc3E4tplFCU'
+      },
       snippet: {
         publishedAt: '2019-10-29T15:00:14.000Z',
         channelId: 'UCg8ss4xW9jASrqWGP30jXiw',
@@ -611,7 +655,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/pvVvPt5cchXjCoSYxodr18lOaEg"',
-      id: 'NaZwVUHnmfE',
+      id: {
+        videoId: 'NaZwVUHnmfE'
+      },
       snippet: {
         publishedAt: '2019-06-19T16:06:13.000Z',
         channelId: 'UCg8ss4xW9jASrqWGP30jXiw',
@@ -690,7 +736,9 @@ export class YoutubeResponseService {
     {
       kind: 'youtube#video',
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/KuFm1jGNMzgjE2VlAEsPgRVra4o"',
-      id: 'G0bBLvWXBvc',
+      id: {
+        videoId: 'G0bBLvWXBvc'
+      },
       snippet: {
         publishedAt: '2019-09-16T16:53:41.000Z',
         channelId: 'UCsBjURrPoezykLs9EqgamOA',

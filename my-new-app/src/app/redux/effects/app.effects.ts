@@ -2,6 +2,6 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect } from '@ngrx/effects';
 
 @Injectable()
-export class J {
-  constructor(private actions$: Actions) {}
+export class AppEffects {
+  // constructor(private actions$: Actions) {}
 }

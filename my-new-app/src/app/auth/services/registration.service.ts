@@ -2,16 +2,21 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthGuard } from 'src/app/auth/guards/auth.guard'
 
+export const AUTH_DATA = 'user-data';
+
 @Injectable({
   providedIn: 'root'
 })
 export class RegistrationService {
   constructor(private router:Router, private authGuard:AuthGuard) { }
-  onLogin(text:string) {
-    const login = localStorage.getItem('login');
-    if (text !== login) {
-      this.router.navigate(['/login/registration']);
-    }
+
+  login(email: string, password: string) {
+    localStorage.setItem(AUTH_DATA, JSON.stringify({email: email, password: password}));
+    this.router.navigate(['/main']);
+  }
+
+  getAuthenticated() {
+    return !!localStorage.getItem(AUTH_DATA);
   }
 
   onRegistration(login:string, pass:string){
