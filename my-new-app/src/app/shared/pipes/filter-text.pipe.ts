@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from 'src/app/redux/state/youtube-response.service';
 import { Item } from '../../auth/models/search-item.model';
 import { SortingComponent } from '../../core/components/header/sorting/sorting.component';
 @Pipe({

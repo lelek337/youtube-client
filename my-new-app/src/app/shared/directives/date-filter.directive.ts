@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from 'src/app/redux/state/youtube-response.service';
 import { Item } from '../../auth/models/search-item.model';
 import { FilterDateService } from '../services/filter-date.service';
 @Directive({

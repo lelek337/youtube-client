@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { YoutubeResponseService} from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService} from 'src/app/redux/state/youtube-response.service';
 import { Item } from 'src/app/auth/models/search-item.model';
 import { MoreService } from '../../services/more.service';
 

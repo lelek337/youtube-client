@@ -6,7 +6,7 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from '../state/youtube-response.service';
 import { Response } from 'src/app/auth/models/search-response.model'
 import { Item } from 'src/app/auth/models/search-item.model';
 

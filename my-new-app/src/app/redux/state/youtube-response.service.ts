@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { Item } from '../models/search-item.model';
-import { Response } from '../models/search-response.model';
+import { Item } from 'src/app/auth/models/search-item.model';
+import { Response } from 'src/app/auth/models/search-response.model';
 
 @Injectable({
   providedIn: 'root'

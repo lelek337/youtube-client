@@ -1,6 +1,8 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from 'src/app/redux/state/youtube-response.service';
+
+
 
 
 @Component({

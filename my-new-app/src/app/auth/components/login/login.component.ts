@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegistrationService } from '../../services/registration.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { RegistrationService } from '../../services/registration.service';
 export class LoginComponent {
   form: FormGroup;
 
-  constructor(private registration:RegistrationService ) {
+  constructor(private registration:RegistrationService, private router:Router ) {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       pass: new FormControl('', [Validators.required, this.checkForLength, this.checkForLetters,this.checkLettersNumbers, this.checkSpecialCharacter])
@@ -22,7 +23,7 @@ export class LoginComponent {
     console.log(this.form.value.email)
     console.log(this.form.value.pass)
     this.registration.login(this.form.value.email, this.form.value.pass );
-
+    this.router.navigate(['/main'])
   }
 
   checkForLength(control:FormControl) {

@@ -4,7 +4,7 @@ import { FilterDateService } from 'src/app/shared/services/filter-date.service';
 import { FilterViewService } from 'src/app/shared/services/filter-view.service';
 import { FilterTextService } from 'src/app/shared/services/filter-text.service';
 import { Router } from '@angular/router';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from 'src/app/redux/state/youtube-response.service';
 
 @Component({
   selector: 'app-search-results',

@@ -1,6 +1,6 @@
 import { Item, } from '../../auth/models/search-item.model';
 import { Directive, ElementRef, HostBinding, Renderer2, AfterContentInit } from '@angular/core';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import { YoutubeResponseService } from 'src/app/redux/state/youtube-response.service';
 
 @Directive({
   selector: '[appBackground]',
