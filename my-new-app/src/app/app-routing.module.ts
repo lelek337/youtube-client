@@ -10,30 +10,25 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  //  {
-  //    path: 'home',
-  //    redirectTo: 'main',
-  //    pathMatch: 'full',
-  //  },
-      {
-        path: 'login',
-        loadChildren: () =>
-        import('./auth/auth.module').then(a => a.AuthModule),
-      },
-      {
-        path: 'main',
-        loadChildren: () =>
-        import('./youtube/youtube.module').then(a => a.YoutubeModule),
-        // canLoad: [AuthGuard],
-      },
-      {
-        path: '404',
-       component: ErrorComponent
-      },
-      {
-        path: '**',
-        redirectTo: '404'
-     }
+  {
+    path: 'login',
+    loadChildren: () =>
+    import('./auth/auth.module').then(a => a.AuthModule),
+  },
+  {
+    path: 'main',
+    loadChildren: () =>
+    import('./youtube/youtube.module').then(a => a.YoutubeModule),
+    // canLoad: [AuthGuard],
+  },
+  {
+    path: '404',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: '404'
+  }
 ];
 
 @NgModule({

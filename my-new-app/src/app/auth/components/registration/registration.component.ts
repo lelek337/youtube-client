@@ -21,6 +21,6 @@ export class RegistrationComponent  {
     this.registration.onRegistration(this.form.value.login, this.form.value.pass);
   }
   onClick() {
-    this.router.navigate(['/login/admin'])
+    this.router.navigate(['/main'])
   }
 }

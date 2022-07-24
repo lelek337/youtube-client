@@ -1,15 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import YoutubeService from 'src/app/youtube/services/youtube.service';
 import { Item } from '../../auth/models/search-item.model';
-import { SortingComponent } from '../../core/components/header/sorting/sorting.component';
+
 @Pipe({
   name: 'filterText'
 })
 export class FilterTextPipe implements PipeTransform {
-dataItem:Item[] = new YoutubeResponseService().response.items
+dataItem!:Item[];
+
+constructor (private youtubeService: YoutubeService ) {
+  this.youtubeService.videos$.subscribe((res) => {
+    this.dataItem = res.items});
+}
 
   public transform(dataItems:Item[], searchText:string) {
-   if (searchText.length === 0) {
+    if (searchText.length === 0) {
       return dataItems;
     }
     return dataItems

@@ -8,11 +8,16 @@ export const AUTH_DATA = 'user-data';
   providedIn: 'root'
 })
 export class RegistrationService {
-  constructor(private router:Router, private authGuard:AuthGuard) { }
+  private myLogin = localStorage.getItem('login');
+  private myPassword = localStorage.getItem('pass');
+  constructor(private router:Router, private authGuard:AuthGuard) {}
 
   login(email: string, password: string) {
-    localStorage.setItem(AUTH_DATA, JSON.stringify({email: email, password: password}));
-    this.router.navigate(['/main']);
+    !!localStorage.getItem(AUTH_DATA) &&
+    this.myLogin === email &&
+    this.myPassword === password?
+    this.router.navigate(['/main']):
+    this.router.navigate(['/login/registration']);
   }
 
   getAuthenticated() {

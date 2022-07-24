@@ -4,9 +4,10 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root'
 })
 export class MoreService {
-  onClick:EventEmitter<number> = new EventEmitter();
+  onClick: EventEmitter<number> = new EventEmitter();
 
-  moreClick(i:number) {
+  moreClick(i: number) {
+    // console.log(i)
     this.onClick.emit(i);
   }
 }

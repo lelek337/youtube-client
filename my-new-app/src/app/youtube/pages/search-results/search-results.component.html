@@ -8,7 +8,7 @@
     appViewFilter
   >
     <h3>Kuji Podcast #{{ idx + 1 }}</h3>
-    <button class="button-like" [id]="idx" (click)="onClick()" appMore>
+    <button class="button-like" [id]="idx + 1" (click)="onClick()" appMore>
       more...
     </button>
     <div [class]="'band'" appBackground>

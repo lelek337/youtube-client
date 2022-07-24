@@ -10,8 +10,6 @@ import { YoutubeResponseService } from "src/app/auth/services/youtube-response.s
   providedIn: 'root'
 })
 export default class YoutubeService {
-  youtubeResponseService = new YoutubeResponseService()
-
   private initDataSubject = new BehaviorSubject<boolean>(false);
   initData$: Observable<boolean> = this.initDataSubject.asObservable();
 
@@ -48,14 +46,15 @@ export default class YoutubeService {
     }
     return of([]);
   }
+
   public queryValue = new Subject<string>();
 
-    searchPosts(userId: string) {
+  searchPosts(userId: string) {
     this.queryValue.next(userId);
   }
 
     videos$ = this.queryValue.pipe(
-    this.liveSearch((res) => this.fetchvideos(res)),
+    this.liveSearch((res) => this.fetchVideos(res)),
   );
 
     liveSearch<T, R>(
@@ -69,7 +68,7 @@ export default class YoutubeService {
     );
   }
 
-    fetchvideos(name: string): Observable<any> {
+  fetchVideos(name: string): Observable<any> {
     if (name.length >= 3) {
       return this.http.get<any>(`/search?&type=video&part=snippet&maxResults=10&q=${name}`).pipe(
         map((videoResponse: any) => {
@@ -78,12 +77,14 @@ export default class YoutubeService {
           return idList;
         }),
         mergeMap((idList) => this.http.get(`/videos?&id=${idList.join(',')}&part=snippet,statistics`)),
+        tap(res => console.log(res))
       );
     }
     return of([]);
   }
 
-allItem!: Observable<Item[]>;
+  allItem!: Observable<Item[]>;
+
   getVideo(videoIds: string[]): Observable<any> {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('part', 'snippet,statistics');
@@ -92,6 +93,7 @@ allItem!: Observable<Item[]>;
     return this.http.get<any>(`/videos`, {
       params: searchParams
     }).pipe(
+      // tap(res => console.log(res)),
       debounceTime(250),
       distinctUntilChanged(),
       map(res => this.allItem = res.items),
@@ -104,8 +106,8 @@ allItem!: Observable<Item[]>;
 
   searchQuery(query: string) {
     this.searchQuerySubject.next(query);
-    // console.log(query);
-     this.loadPlaylist(query).subscribe(res => res)
+    console.log(query);
+    this.loadPlaylist(query).subscribe(res => res)
 
   }
 

@@ -1,5 +1,6 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 import { YoutubeResponseService } from 'src/app/auth/services/youtube-response.service';
+import YoutubeService from 'src/app/youtube/services/youtube.service';
 import { Item } from '../../auth/models/search-item.model';
 import { FilterViewService } from '../services/filter-view.service';
 
@@ -8,11 +9,19 @@ import { FilterViewService } from '../services/filter-view.service';
 })
 export class ViewFilterDirective {
 
- dataItems: Item[] = new YoutubeResponseService().response.items;
+  dataItems!: Item[];
   filterService: FilterViewService = new FilterViewService;
 
 
-  constructor(private element:ElementRef, private render: Renderer2, ) {}
+  constructor(
+    private element:ElementRef,
+    private render: Renderer2,
+    private youtubeService: YoutubeService,
+
+    ) {
+    this.youtubeService.videos$.subscribe((res) => {
+      this.dataItems = res.items});
+  }
 
   @HostListener('click') onclick() {
     let index = 0;

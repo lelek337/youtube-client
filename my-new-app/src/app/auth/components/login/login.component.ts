@@ -11,7 +11,7 @@ import { RegistrationService } from '../../services/registration.service';
 export class LoginComponent {
   form: FormGroup;
 
-  constructor(private registration:RegistrationService ) {
+  constructor(private registration:RegistrationService) {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       pass: new FormControl('', [Validators.required, this.checkForLength, this.checkForLetters,this.checkLettersNumbers, this.checkSpecialCharacter])
@@ -19,10 +19,9 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    console.log(this.form.value.email)
-    console.log(this.form.value.pass)
+    // console.log(this.form.value.email)
+    // console.log(this.form.value.pass)
     this.registration.login(this.form.value.email, this.form.value.pass );
-
   }
 
   checkForLength(control:FormControl) {
