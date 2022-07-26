@@ -77,7 +77,7 @@ export default class YoutubeService {
           return idList;
         }),
         mergeMap((idList) => this.http.get(`/videos?&id=${idList.join(',')}&part=snippet,statistics`)),
-        tap(res => console.log(res))
+        // tap(res => console.log(res))
       );
     }
     return of([]);

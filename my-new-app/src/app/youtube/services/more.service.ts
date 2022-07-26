@@ -7,7 +7,7 @@ export class MoreService {
   onClick: EventEmitter<number> = new EventEmitter();
 
   moreClick(i: number) {
-    // console.log(i)
+    console.log(i)
     this.onClick.emit(i);
   }
 }

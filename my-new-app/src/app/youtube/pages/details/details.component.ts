@@ -10,16 +10,21 @@ import YoutubeService from '../../services/youtube.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
-  dataItem!: Item;
+  dataItem!: Item[];
+  index = 1;
 
   constructor(
     private moreService: MoreService,
     private router: Router,
     private youtubeService: YoutubeService,
     ) {
-    this.youtubeService.videos$.subscribe((res) => {
-      this.dataItem = res;
-      console.log(res)
+      this.moreService.onClick.subscribe(cnt => {
+        this.index = cnt;
+        console.log(cnt)
+      });
+      this.youtubeService.videos$.subscribe((res) => {
+      this.dataItem = res.items;
+      // console.log(res)
     });
       // console.log(this.dataItem)
   }

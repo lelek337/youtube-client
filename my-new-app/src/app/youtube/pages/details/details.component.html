@@ -1,23 +1,23 @@
 <div class="details-card">
   <button (click)="clickBack()">Back</button>
   <img
-    src="{{ dataItem.snippet.thumbnails.medium.url }}"
+    src="{{ dataItem[index].snippet.thumbnails.medium.url }}"
     alt="caption"
     class="caption"
   />
   <div class="information">
     <h2>Kuji Podcast #</h2>
     <h3>Description:</h3>
-    <p>{{ dataItem.snippet.description }}</p>
+    <p>{{ dataItem[index].snippet.description }}</p>
     <div class="card-likes">
       <img src="./assets/svg/viewed.svg" alt="viewed" />
-      <p>{{ dataItem.statistics.viewCount }}</p>
+      <p>{{ dataItem[index].statistics.viewCount }}</p>
       <img src="./assets/svg/liked.svg" alt="liked" />
-      <p>{{ dataItem.statistics.likeCount }}</p>
+      <p>{{ dataItem[index].statistics.likeCount }}</p>
       <img src="./assets/svg/dislike.svg" alt="dislike" />
-      <p>{{ dataItem.statistics.dislikeCount }}</p>
+      <p>{{ dataItem[index].statistics.dislikeCount }}</p>
       <img src="./assets/svg/content-copy.svg" alt="content" />
-      <p>{{ dataItem.statistics.commentCount }}</p>
+      <p>{{ dataItem[index].statistics.commentCount }}</p>
     </div>
   </div>
 </div>
