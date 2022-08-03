@@ -1,0 +1,12 @@
+@import 'src/app/variablesSCSS.scss';
+
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $headerColor;
+  img {
+    width: 90%;
+  }
+}

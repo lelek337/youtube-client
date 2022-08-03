@@ -1,4 +1,4 @@
-import{ Item } from './search-item.model'
+import{ Item } from '../../auth/models/search-item.model'
 
 export interface Response {
   kind: string;

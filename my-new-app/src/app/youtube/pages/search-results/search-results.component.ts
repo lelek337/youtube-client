@@ -48,4 +48,8 @@ export class SearchResultsComponent implements OnInit{
     });
   }
 
+  navigateAdmin() {
+    this.router.navigate(['/login/admin']);
+  }
+
 }

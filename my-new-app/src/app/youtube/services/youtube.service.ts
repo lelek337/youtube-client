@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, debounceTime, distinctUntilChanged, map, mergeMap, Observable, of, Subject, switchMap, tap } from "rxjs";
+import { BehaviorSubject, debounceTime, distinctUntilChanged, distinctUntilKeyChanged, map, mergeMap, Observable, of, Subject, switchMap, tap } from "rxjs";
 import { Item } from "src/app/auth/models/search-item.model";
-import { Response } from "src/app/auth/models/search-response.model";
-import { YoutubeResponseService } from "src/app/auth/services/youtube-response.service";
+import { Response } from "src/app/redux/state/search-response.model";
+
 
 
 @Injectable({
@@ -36,8 +36,8 @@ export default class YoutubeService {
       return this.http.get<Response>(`/search`, { params })
         .pipe(
           distinctUntilChanged(),
-          map((searchResponse: Response) => {
-            const videoIds = searchResponse.items.map(item => item.id.videoId);
+          map((response: Response) => {
+            const videoIds = response.items.map(item => item.id.videoId);
             return videoIds;
           }),
           tap(res => console.log(res)),

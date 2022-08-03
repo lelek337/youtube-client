@@ -6,6 +6,7 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { BackgroundDirective } from './directives/background.directive.ts.directive';
 import { DateFilterDirective } from './directives/date-filter.directive';
 import { ViewFilterDirective } from './directives/view-filter.directive';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 
 
@@ -17,7 +18,7 @@ import { ViewFilterDirective } from './directives/view-filter.directive';
     BackgroundDirective,
     DateFilterDirective,
     ViewFilterDirective,
-
+    UserCardComponent,
   ],
   exports: [
     SearchComponent,
@@ -26,6 +27,7 @@ import { ViewFilterDirective } from './directives/view-filter.directive';
     BackgroundDirective,
     DateFilterDirective,
     ViewFilterDirective,
+    UserCardComponent
   ],
   imports: [
     CommonModule

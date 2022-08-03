@@ -1,24 +1,42 @@
 
-<form class="example-form">
+<form class="example-form"
+[formGroup]="form"
+novalidate
+(ngSubmit)="onSubmit()">
   <h2>Create New Card</h2>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Title</mat-label>
-    <input matInput  value="">
+    <input matInput
+      value=""
+      formControlName="title" >
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Discription</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="">
+    <input matInput
+    placeholder="Discription"
+    value=""
+    formControlName="discription">
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Img</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="">
+    <input matInput
+    placeholder="Img"
+    value=""
+    formControlName="img">
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Link Video</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="">
+    <input matInput
+    placeholder="Link Video"
+    value=""
+    formControlName="linkVideo">
   </mat-form-field>
-  <button mat-raised-button color="primary" class="button">Create Card</button>
+  <button mat-raised-button
+  color="primary"
+  [disabled]="form.invalid"
+  type="submit"
+  class="button">Create Card</button>
 </form>

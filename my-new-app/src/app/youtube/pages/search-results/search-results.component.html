@@ -1,4 +1,6 @@
+<button mat-raised-button color="primary" (click)="navigateAdmin()">Primary</button>
 <div [class]="'search-results'">
+  <app-user-card></app-user-card>
   <app-search-item
     selector="app-search-item"
     *ngFor="let item of fetchedVideos; index as idx"

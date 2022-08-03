@@ -13,7 +13,7 @@ import { AppEffects } from './redux/effects/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { YoutubeInterceptor } from './youtube/services/youtube.interceptor';
-import YoutubeService from './youtube/services/youtube.service';
+import *as FromUser from './redux/reducers/user.reducer';
 
 
 
@@ -27,7 +27,7 @@ import YoutubeService from './youtube/services/youtube.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({card: FromUser.cardReducer}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot(),
